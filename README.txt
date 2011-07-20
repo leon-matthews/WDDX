@@ -16,7 +16,8 @@ for the format) project that had a home-brewed ORM.
 As such, it has good support for the parts of the WDDX standard that the PHP
 wddx functions actually use, but probably poor support of the full standard.
 It's impossible to actually tell because the specification is no longer
-online!  DNS entries for wddx.org expired in 2010, last year as I write this.
+online!  DNS entries for wddx.org expired in 2010, last year as I write
+this. I have decoded many thousands of packets with it, but YMMV...
 
 
 Example
@@ -81,4 +82,5 @@ packets I had.  Partly because that was enough to 'stratch my itch', but
 mostly because the spec is no longer online!
 
 For example, I found some slides that mention that the WDDX string type can
-contain  control characters in strings, eg. <char code='0C'/>.  This feature is entirely unsupported.
+contain  control characters in strings, eg. <char code='0C'/>.  This
+feature is entirely unsupported.
