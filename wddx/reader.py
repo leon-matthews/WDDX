@@ -7,13 +7,17 @@ import xml.etree.ElementTree as etree
 
 
 def load(path, encoding='utf-8'):
-    "Deserialise a WDDX file to a Python object"
+    """
+    Deserialise a WDDX file to a Python object.
+    """
     with open(path, 'rt', encoding=encoding) as fp:
         return loads(fp.read())
 
 
 def loads(xml):
-    "Deserialise a WDDX string to a Python object"
+    """
+    Deserialise a WDDX string to a Python object
+    """
     data = []
     tree = etree.fromstring(xml)
     for elem in tree.find('./data'):
@@ -22,7 +26,9 @@ def loads(xml):
 
 
 def _tag_struct(elem):
-    "Create dictionary from struct tag"
+    """
+    Create dictionary from struct tag.
+    """
     value = {}
     for var in elem:
         assert var.tag == 'var', "Children of struct must be var elements"
@@ -34,13 +40,16 @@ def _tag_struct(elem):
 
 
 def _tag_array(elem):
-    "Create list from array tag"
+    """
+    Create list from array tag.
+    """
     value = []
     for e in elem:
         value.append(_get_value(e))
     return value
 
 
+# Switch statement?  We don't need no stinkin' switch statement! :-)
 _TAGS = {
     'array': _tag_array,
     'boolean': lambda x: True if x.attrib['value'] == 'true' else False,
@@ -53,6 +62,9 @@ _TAGS = {
 
 
 def _get_value(elem):
+    """
+    Extract value of appropriate type from input element.
+    """
     tag = elem.tag
     if tag not in _TAGS:
         raise ValueError("Unknown tag '{}'".format(elem.tag))

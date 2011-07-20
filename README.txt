@@ -3,6 +3,8 @@
 WDDX
 ====
 
+A python decoder for the WDDX XML serialisation format.
+
 WDDX was an XML data serialisation format created in 1998, initially for the
 ColdFusion server environment, then open-sourced. It has faded into history
 now, having lost out to JSON, YAML, and native serialisation.  According to
@@ -24,8 +26,8 @@ Example
 =======
 
 The API follows the example given by the json, pickle, and marshall modules.
-You can see lots more examples in the test folder, including sequence and
-mapping types.
+You can see lots more examples in the test folder, including recursive
+sequence and mapping types.
 
 >>> import wddx
 >>> xml = """
@@ -48,8 +50,9 @@ TODO
 
 This module is by no means a full WDDX implementation.  The format is
 practically dead -- at the time of writing the WDDX specification websites
-were off-line.  (Indeed, my motivation for writing the module was to retire a
-legacy data-storage engine.)
+were off-line.  (Indeed, I wrote this module to help retire a legacy
+data-storage engine written back when WDDX looked like a promising
+interchange format.)
 
 Below are the key deficiencies.  I'm not planning on rectifying any of these
 myself, they are documented here in case anybody else wants to take the module
@@ -79,7 +82,7 @@ Nicities and Details
 
 I've only implemented enough of the WDDX specification to handle all of the
 packets I had.  Partly because that was enough to 'stratch my itch', but
-mostly because the spec is no longer online!
+mostly because I was unable to find a copy of the spec.
 
 For example, I found some slides that mention that the WDDX string type can
 contain  control characters in strings, eg. <char code='0C'/>.  This

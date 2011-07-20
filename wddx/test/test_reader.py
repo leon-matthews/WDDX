@@ -54,12 +54,12 @@ class ReaderTest(unittest.TestCase):
             <struct>
                 <var name='pi'><number>3.1415926</number></var>
                 <var name='answer'><number>42</number></var>
-                <var name='fucks_given'><null /></var>
+                <var name='not_at_all'><null /></var>
                 <var name='cities'>
                     <array length='3'>
-                    <string>Austin</string>
-                    <string>Novato</string>
-                    <string>Seattle</string>
+                    <string>Auckland</string>
+                    <string>Wellington</string>
+                    <string>Christchurch</string>
                     </array>
                 </var>
             </struct>
@@ -69,8 +69,8 @@ class ReaderTest(unittest.TestCase):
         data = reader.loads(xml)
         expected = [{
             'answer': 42,
-            'cities': ['Austin', 'Novato', 'Seattle'],
-            'fucks_given': None,
+            'cities': ['Auckland', 'Wellington', 'Christchurch'],
+            'not_at_all': None,
             'pi': 3.1415926,
         }]
         self.assertEqual(data, expected)
