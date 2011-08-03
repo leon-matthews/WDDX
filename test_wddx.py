@@ -3,11 +3,11 @@ import datetime
 import os.path
 import unittest
 
-from .. import reader
+import wddx
 
 
 class ReaderTest(unittest.TestCase):
-    DATA =  os.path.join(os.path.dirname(__file__), 'data')
+    DATA =  os.path.join(os.path.dirname(__file__), 'test_data')
 
     def test_single_string(self):
         xml = """
@@ -18,7 +18,7 @@ class ReaderTest(unittest.TestCase):
         </data>
         </wddxPacket>
         """
-        data = reader.loads(xml)
+        data = wddx.loads(xml)
         self.assertEqual(data, ['PHP to WDDX packet example',])
 
     def test_basic_types(self):
@@ -35,7 +35,7 @@ class ReaderTest(unittest.TestCase):
         </data>
         </wddxPacket>
         """
-        data = reader.loads(xml)
+        data = wddx.loads(xml)
         expected = [
             3.1415926,
             None,
@@ -66,7 +66,7 @@ class ReaderTest(unittest.TestCase):
             </data>
         </wddxPacket>
         """
-        data = reader.loads(xml)
+        data = wddx.loads(xml)
         expected = [{
             'answer': 42,
             'cities': ['Auckland', 'Wellington', 'Christchurch'],
@@ -77,7 +77,7 @@ class ReaderTest(unittest.TestCase):
 
     def test_from_file(self):
         path = os.path.join(self.DATA, 'wddx.xml')
-        data = reader.load(path)
+        data = wddx.load(path)
         expected = [{
             'carton_size': '12',
             'category': 'items',
@@ -98,7 +98,7 @@ class ReaderTest(unittest.TestCase):
 
     def test_from_file2(self):
         path = os.path.join(self.DATA, 'wddx2.xml')
-        data = reader.load(path)
+        data = wddx.load(path)
         expected =  [{
             'a': [10, 'second element'],
             'b': True,
