@@ -7,7 +7,7 @@ if sys.version_info <= (3,):
     raise Exception('Python 3 required')
 
 
-VERSION = '0.3.0'
+VERSION = '0.3.1'
 
 
 setup(
@@ -17,6 +17,7 @@ setup(
     author = 'Leon Matthews',
     author_email = 'python@lost.co.nz',
     url = 'http://lost.co.nz/',
+    download_url = 'https://github.com/leon-matthews/wddx',
     license='LICENSE.txt',
 
     description='A Python decoder for the WDDX XML serialisation format.',
