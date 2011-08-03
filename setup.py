@@ -7,10 +7,13 @@ if sys.version_info <= (3,):
     raise Exception('Python 3 required')
 
 
+VERSION = '0.3.0'
+
+
 setup(
     name = 'wddx',
     py_modules = ['wddx'],
-    version = '0.2.0',
+    version = VERSION,
     author = 'Leon Matthews',
     author_email = 'python@lost.co.nz',
     url = 'http://lost.co.nz/',
