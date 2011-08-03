@@ -16,8 +16,6 @@ setup(
     url = 'http://lost.co.nz/',
     license='LICENSE.txt',
 
-    requires=['Pylons>=0.97'],
-
     description='A Python decoder for the WDDX XML serialisation format.',
     long_description=open('README.txt').read(),
 
