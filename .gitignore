@@ -1,7 +1,9 @@
 # File patterns git SCM system should ignore
 # (see 'man 5 gitignore' for details)
 __pycache__/
+dist/
+.coverage
+.DS_Store
+MANIFEST
 *.pyc
 *.pyo
-.DS_Store
-.coverage
