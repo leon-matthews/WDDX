@@ -61,13 +61,6 @@ myself, they are documented here in case anybody else wants to take the module
 over...
 
 
-Python 2 Support
-----------------
-
-The module is currently Python 3 only, but will run with minor changes under
-Python 2.
-
-
 Encoding Support
 ----------------
 

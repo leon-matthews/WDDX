@@ -3,14 +3,14 @@ Create Python objects from WDDX strings and files.
 """
 
 from datetime import datetime
+import io
 import xml.etree.ElementTree as etree
-
 
 def load(path, encoding='utf-8'):
     """
     Deserialise a WDDX file to a Python object.
     """
-    with open(path, 'rt', encoding=encoding) as fp:
+    with io.open(path, 'rt', encoding=encoding) as fp:
         return loads(fp.read())
 
 

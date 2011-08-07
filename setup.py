@@ -3,11 +3,7 @@ from distutils.core import setup
 import sys
 
 
-if sys.version_info <= (3,):
-    raise Exception('Python 3 required')
-
-
-VERSION = '0.3.1'
+VERSION = '0.4.0'
 
 
 setup(
@@ -28,7 +24,11 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Text Processing :: Markup :: XML',
         ],
